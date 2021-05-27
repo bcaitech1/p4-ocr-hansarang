@@ -1,4 +1,4 @@
-network: "Attention"
+network: SATRN
 input_size:
   height: 128
   width: 128
@@ -36,7 +36,7 @@ data:
   test_proportions: 0.2 # only if random_split is True
   crop: True
   rgb: 1    # 3 for color, 1 for greyscale
-  
+
 batch_size: 96
 num_workers: 6
 num_epochs: 50
