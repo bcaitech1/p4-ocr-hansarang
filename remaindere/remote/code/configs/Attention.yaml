@@ -47,9 +47,9 @@ max_grad_norm: 2.0
 seed: 1104
 optimizer:
   optimizer: 'Adam' # Adam, Adadelta
-  lr: 1e-4 # 1e-4
+  lr: 5e-4 # 1e-4
   weight_decay: 1e-4
   is_cycle: False #if True, it goes "Cycle"
-  lr_epochs: 2000 #step size, each 4 epoch (1 epoch당 step_size = data_num(80000) / batch_size)
-  lr_factor: 0.92
+  lr_epochs: 1000 #step size, each 2 epoch (1 epoch step_size = data_num(80000) / batch_size)
+  lr_factor: 0.96
 
