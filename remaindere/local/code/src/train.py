@@ -116,9 +116,10 @@ def run_epoch(
                 )
                 grad_norms.append(grad_norm)
 
-                # cycle
-                lr_scheduler.step()
+                # step
                 optimizer.step()
+                lr_scheduler.step()
+
 
             losses.append(loss.item())
             
