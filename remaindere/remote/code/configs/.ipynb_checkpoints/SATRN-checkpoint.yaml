@@ -37,7 +37,7 @@ data:
   crop: True
   rgb: 1    # 3 for color, 1 for greyscale
   
-batch_size: 256
+batch_size: 160
 num_workers: 4
 num_epochs: 50
 print_epochs: 1
@@ -50,5 +50,6 @@ optimizer:
   lr: 1e-4 # 1e-4
   weight_decay: 1e-4
   is_cycle: False #if True, it goes "Cycle"
-  lr_epochs: 1250 #step size, each 8 epoch (1 epoch당 step_size = data_num(80000) / batch_size)
+  lr_epochs: 2000 #step size, each 4 epoch (1 epoch당 step_size = data_num(80000) / batch_size)
   lr_factor: 0.92
+
