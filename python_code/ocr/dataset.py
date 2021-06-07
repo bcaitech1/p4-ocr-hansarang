@@ -5,11 +5,14 @@ import torch
 from PIL import Image, ImageOps
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
+import cv2
+import numpy as np
 
 START = "<SOS>"
 END = "<EOS>"
 PAD = "<PAD>"
 SPECIAL_TOKENS = [START, END, PAD]
+
 
 
 # Rather ignorant way to encode the truth, but at least it works.
@@ -129,6 +132,19 @@ class LoadDataset(Dataset):
             for p, truth in groundtruth
         ]
 
+    def rotate_img(self, img):
+        '''
+        input : PIL image
+        output : rotated image
+        '''
+        img = np.array(img)
+        prob = np.random.rand(1)
+        if prob < 0.5:
+            img_rotated = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
+        else:
+            img_rotated = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        return Image.fromarray(img_rotated)
+
     def __len__(self):
         return len(self.data)
 
@@ -141,6 +157,9 @@ class LoadDataset(Dataset):
             image = image.convert("L")
         else:
             raise NotImplementedError
+
+        if image.size[0] / image.size[1] <= 0.6:
+            image = self.rotate_img(image)
 
         if self.crop:
             # Image needs to be inverted because the bounding box cuts off black pixels,
@@ -199,6 +218,19 @@ class LoadEvalDataset(Dataset):
     def __len__(self):
         return len(self.data)
 
+    def rotate_img(self, img):
+        '''
+        input : PIL image
+        output : rotated image
+        '''
+        img = np.array(img)
+        prob = np.random.rand(1)
+        if prob < 0.5:
+            img_rotated = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
+        else:
+            img_rotated = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        return Image.fromarray(img_rotated)
+
     def __getitem__(self, i):
         item = self.data[i]
         image = Image.open(item["path"])
@@ -208,7 +240,8 @@ class LoadEvalDataset(Dataset):
             image = image.convert("L")
         else:
             raise NotImplementedError
-
+        if image.size[0] / image.size[1] <= 0.6:
+            image = self.rotate_img(image)
         if self.crop:
             # Image needs to be inverted because the bounding box cuts off black pixels,
             # not white ones.
@@ -221,7 +254,6 @@ class LoadEvalDataset(Dataset):
         return {"path": item["path"], "file_path":item["file_path"],"truth": item["truth"], "image": image}
 
 def dataset_loader(options, transformed):
-
     # Read data
     train_data, valid_data = [], [] 
     if options.data.random_split:
@@ -264,5 +296,4 @@ def dataset_loader(options, transformed):
         num_workers=options.num_workers,
         collate_fn=collate_batch,
     )
-
     return train_data_loader, valid_data_loader, train_dataset, valid_dataset
