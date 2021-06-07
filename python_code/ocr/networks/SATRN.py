@@ -292,11 +292,20 @@ class PositionalEncoding2D(nn.Module):
     def __init__(self, in_channels, max_h=64, max_w=128, dropout=0.1):
         super(PositionalEncoding2D, self).__init__()
 
-        self.h_position_encoder = self.generate_encoder(in_channels // 2, max_h)
-        self.w_position_encoder = self.generate_encoder(in_channels // 2, max_w)
+        self.h_position_encoder = self.generate_encoder(
+            in_channels // 2, max_h)
+        self.w_position_encoder = self.generate_encoder(
+            in_channels // 2, max_w)
 
         self.h_linear = nn.Linear(in_channels // 2, in_channels // 2)
         self.w_linear = nn.Linear(in_channels // 2, in_channels // 2)
+
+        self.avgpool = nn.AdaptiveAvgPool2d(1)
+
+        self.inter = nn.Linear(in_channels, in_channels)
+        self.relu = nn.ReLU(inplace=True)
+        self.alpha = nn.Linear(in_channels, in_channels)
+        self.sigmoid = nn.Sigmoid()
 
         self.dropout = nn.Dropout(p=dropout)
 
@@ -310,11 +319,20 @@ class PositionalEncoding2D(nn.Module):
         return position_encoder  # (Max_len, In_channel)
 
     def forward(self, input):
-        ### Require DEBUG
+        # Require DEBUG
         b, c, h, w = input.size()
+        # adaptive
+        e = self.avgpool(input).squeeze()
+        a = self.sigmoid(self.alpha(
+            self.relu(self.inter(e))))
+        a = a.reshape((-1, 2, 1, c//2))
+
+        ##########
+
         h_pos_encoding = (
             self.h_position_encoder[:h, :].unsqueeze(1).to(input.get_device())
         )
+
         h_pos_encoding = self.h_linear(h_pos_encoding)  # [H, 1, D]
 
         w_pos_encoding = (
@@ -322,17 +340,23 @@ class PositionalEncoding2D(nn.Module):
         )
         w_pos_encoding = self.w_linear(w_pos_encoding)  # [1, W, D]
 
-        h_pos_encoding = h_pos_encoding.expand(-1, w, -1)   # h, w, c/2
-        w_pos_encoding = w_pos_encoding.expand(h, -1, -1)   # h, w, c/2
+        h_pos_encoding = h_pos_encoding.expand(-1, w, -1).unsqueeze(0)
+        w_pos_encoding = w_pos_encoding.expand(
+            h, -1, -1).unsqueeze(0)   # h, w, c/2
+        # adaptive
 
-        pos_encoding = torch.cat([h_pos_encoding, w_pos_encoding], dim=2)  # [H, W, 2*D]
+        h_pos_encoding = torch.mul(a[:, 0:1, :, :], h_pos_encoding)
+        w_pos_encoding = torch.mul(a[:, 1:2, :, :], w_pos_encoding)
 
-        pos_encoding = pos_encoding.permute(2, 0, 1)  # [2*D, H, W]
+        pos_encoding = torch.cat(
+            [h_pos_encoding, w_pos_encoding], dim=3)  # [B, H, W, 2*D]
 
-        out = input + pos_encoding.unsqueeze(0)
+        pos_encoding = pos_encoding.permute(0, 3, 1, 2)  # [B, 2*D, H, W]
+        out = input + pos_encoding
         out = self.dropout(out)
-
         return out
+
+
 
 
 class TransformerEncoderFor2DFeatures(nn.Module):
