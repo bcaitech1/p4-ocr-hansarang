@@ -30,8 +30,8 @@ from metrics import word_error_rate,sentence_acc
 def id_to_string(tokens, data_loader,do_eval=0):
     result = []
     if do_eval:
-        special_ids = [data_loader.dataset.token_to_id["<PAD>"], data_loader.dataset.token_to_id["<SOS>"],
-                       data_loader.dataset.token_to_id["<EOS>"]]
+        eos_id = data_loader.dataset.token_to_id["<EOS>"]
+        special_ids = [data_loader.dataset.token_to_id["<PAD>"], data_loader.dataset.token_to_id["<SOS>"], eos_id]
 
     for example in tokens:
         string = ""
@@ -41,6 +41,8 @@ def id_to_string(tokens, data_loader,do_eval=0):
                 if token not in special_ids:
                     if token != -1:
                         string += data_loader.dataset.id_to_token[token] + " "
+                elif token == eos_id:
+                    break
         else:
             for token in example:
                 token = token.item()
@@ -164,7 +166,7 @@ def main(config_file):
     Train math formula recognition model
     """
     options = Flags(config_file).get()
-
+    teacher_forcing_ratio = options.teacher_forcing_ratio
     #set random seed
     torch.manual_seed(options.seed)
     np.random.seed(options.seed)
@@ -328,6 +330,7 @@ def main(config_file):
             device,
             train=True,
         )
+        
 
 
 
@@ -375,7 +378,7 @@ def main(config_file):
                 validation_result["wer"] / validation_result["num_wer"]
         )
         validation_wer.append(validation_epoch_wer)
-
+        teacher_forcing_ratio = teacher_forcing_ratio*0.97
         # Save checkpoint
         #make config
         with open(config_file, 'r') as f:
