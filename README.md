@@ -1,4 +1,4 @@
-# Pstage 4 – OCR – 한사랑개발회
+# Pstage 4 – 수식인식기 – 한사랑개발회
 
 <img src="https://user-images.githubusercontent.com/43458619/122281117-e30d3d00-cf24-11eb-87e1-e04035e101c1.png" width="60%" height="60%">
 
