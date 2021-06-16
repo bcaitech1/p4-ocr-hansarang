@@ -24,7 +24,6 @@
   * [Baseline code](#Baseline-code)
   * [Input](#Input)
 * [Yaml file example](#Yaml-file-example)
-* [Overview](Overview)
 * [Contributors](Contributors)
 * [Reference](Reference)
 * [Licence](Licence)
@@ -191,13 +190,11 @@ prefix: "./log/satrn"
 
 data:
   train:
-    #- "/opt/ml/input/data/train_dataset/gt.txt"
     - "../../train_dataset/gt.txt"
   test:
-    - "../../train_dataset/tokens.txt"
+    - ""
   token_paths:
-    #- "/opt/ml/input/data/train_dataset/tokens.txt"  # 241 tokens
-    -
+    - "- "../../train_dataset/tokens.txt""  # 241 tokens
   dataset_proportions:  # proportion of data to take from train (not test)
     - 1.0
   random_split: True # if True, random split from train files
@@ -214,17 +211,11 @@ teacher_forcing_ratio: 0.8
 max_grad_norm: 2.0
 seed: 1234
 optimizer:
-  optimizer: 'NAdam' # Adam, Adadelta
-  lr: 5e-4 # 1e-4
+  optimizer: 'NAdam' # Adam, Adadelta, ...extra
+  lr: 5e-4 # learning rate
   weight_decay: 1e-4
   is_cycle: True
 ```
-
-
-
-## Overview
-
-(그림 작성 필요)
 
 
 
