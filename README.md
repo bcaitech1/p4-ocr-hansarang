@@ -1,6 +1,7 @@
 # Pstage 4 – OCR – 한사랑개발회
 
-<img src="C:\Users\TGJ\Desktop\BoostCamp_AI\P_stage\4_stage\깃문서 작성\수식 인식 데모1.png" alt="(임시)수식인식기 데모" style="zoom:75%;" />
+![ocr 이미지](https://user-images.githubusercontent.com/43458619/122280872-9c1f4780-cf24-11eb-9eec-aa43691d4425.png)
+
 
 수식인식기는 OCR(Optical Character Recognition) task의 일환으로써 수식 이미지 latex 포맷의 텍스트로 변환하는 task입니다. 수식 인식의 경우, 기존의 OCR과 달리 multi line recogniton을 필요로 한다는 점에서 기존의 single line recognition OCR task와 차별점을 가집니다.
 
