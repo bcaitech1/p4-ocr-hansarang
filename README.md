@@ -1,13 +1,13 @@
 # Pstage 4 – OCR – 한사랑개발회
 
-<img src="https://user-images.githubusercontent.com/43458619/122281117-e30d3d00-cf24-11eb-87e1-e04035e101c1.png" width="50%" height="50%">
+<img src="https://user-images.githubusercontent.com/43458619/122281117-e30d3d00-cf24-11eb-87e1-e04035e101c1.png" width="60%" height="60%">
 
 
 수식인식기는 OCR(Optical Character Recognition) task의 일환으로써 수식 이미지 latex 포맷의 텍스트로 변환하는 task입니다. 수식 인식의 경우, 기존의 OCR과 달리 multi line recogniton을 필요로 한다는 점에서 기존의 single line recognition OCR task와 차별점을 가집니다.
 
-(우리 수식인식기 특징 정리)::저희 수식인식기 task는 SATRN model을 기본 틀로 설정하여 수식 이미지 학습을 진행했습니다. Multi line recognition 문제 이외에도 다른 문제를 해결하기 위해 기존 model에서 몇가지 개선 사항을 진행했습니다. 추가적으로 python flask를 이용해 개발한 간단한 데모를 만듦으로써 저희가 만든 모델을 서비스로 출시할 수 있는 가능성을 제시하고자 합니다.
+(우리 수식인식기 특징 정리)::저희 수식인식기 task는 SATRN model을 기본 틀로 설정하여 수식 이미지 학습을 진행했습니다. Multi line recognition 문제 이외에도 다른 문제를 해결하기 위해 기존 model에 개선 사항을 적용했습니다. 추가적으로 streamlit를 이용해 간단한 웹 데모를 만듦으로써 저희가 만든 모델을 서비스로 출시할 수 있음을 보이고자 했습니다.
 
-Wrap-up Report에 문제 인식, EDA, 모델 설계, 실험 관리 및 검증 전략 등 저희가 다룬 기술의 흐름과 고민의 흔적을 기록했습니다. 
+[Wiki](https://github.com/bcaitech1/p4-ocr-hansarang/wiki)에 문제 인식, EDA, 모델 설계, 실험 관리 및 검증 전략 등 저희가 고안한 기술의 흐름과 고민의 흔적을 기록했습니다. 
 
  
 
