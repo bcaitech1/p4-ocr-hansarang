@@ -1,6 +1,6 @@
 # Pstage 4 – OCR – 한사랑개발회
 
-<img src="https://user-images.githubusercontent.com/43458619/122281117-e30d3d00-cf24-11eb-87e1-e04035e101c1.png" width="300" height="200"}
+<img src="https://user-images.githubusercontent.com/43458619/122281117-e30d3d00-cf24-11eb-87e1-e04035e101c1.png" width="50%" height="50%">
 
 
 수식인식기는 OCR(Optical Character Recognition) task의 일환으로써 수식 이미지 latex 포맷의 텍스트로 변환하는 task입니다. 수식 인식의 경우, 기존의 OCR과 달리 multi line recogniton을 필요로 한다는 점에서 기존의 single line recognition OCR task와 차별점을 가집니다.
@@ -37,7 +37,7 @@ Wrap-up Report에 문제 인식, EDA, 모델 설계, 실험 관리 및 검증 �
 
 * [streamlit_test](https://github.com/bcaitech1/p4-ocr-hansarang/tree/main/streamlit_test)
 
-![demo_example](https://user-images.githubusercontent.com/43458619/122248828-54d48f00-cf03-11eb-81cd-d3ba2aa3dd2a.png)
+<img src = "https://user-images.githubusercontent.com/43458619/122248828-54d48f00-cf03-11eb-81cd-d3ba2aa3dd2a.png" width="50%" height="50%">
 
 
 
