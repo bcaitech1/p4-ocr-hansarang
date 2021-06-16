@@ -30,11 +30,12 @@ Wrap-up Report에 문제 인식, EDA, 모델 설계, 실험 관리 및 검증 �
 
 ## Demo
 
-아래의 링크에서 Demo 프로그램의 자세한 사항을 확인하실 수 있습니다.
+[[Click here!]Demo link](http://35.74.99.158:8501/)
+아래의 링크에서 Demo의 자세한 사항을 확인하실 수 있습니다.
 
 * [streamlit_test](https://github.com/bcaitech1/p4-ocr-hansarang/tree/main/streamlit_test)
 
-**★★★★★★★(결과 이미지 사진)**
+![demo_example](https://user-images.githubusercontent.com/43458619/122248828-54d48f00-cf03-11eb-81cd-d3ba2aa3dd2a.png)
 
 
 
