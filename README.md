@@ -43,9 +43,6 @@
 ## Getting started
 
 ### Dependencies
-
-(requirements 파일 참조)
-
 - scikit_image==0.14.1
 - opencv_python==3.4.4.19
 - tqdm==4.28.1
@@ -56,9 +53,6 @@
 - Pillow==8.1.1
 - tensorboardX==1.5
 - editdistance==0.5.3
-
-(추가 설치 파일 참조 -> 최종 코드에 맞게 수정)
-
 - opencv-python==3.4.4.19
 - adamp==0.3.0 
 - madgrad==1.1 
@@ -69,7 +63,7 @@
 
 ```
 $ git clone https://github.com/bcaitech1/p4-ocr-hansarang.git
-$ cd code <-- (수정 필요)
+$ cd code 
 ```
 
 ### Train
