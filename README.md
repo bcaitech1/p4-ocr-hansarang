@@ -96,20 +96,20 @@ code
 │   ├── train.cpython-37.pyc
 │   └── utils.cpython-37.pyc
 ├── checkpoint.py
-├── configs
+├── configs - arguments config files
 │   ├── Attention.yaml
 │   └── SATRN.yaml
 ├── data_tools
 │   ├── extract_tokens.py
 │   ├── parse_upstage.py
 │   └── train_test_split.py
-├── dataset.py
+├── dataset.py - make dataset objects
 ├── download.sh
-├── flags.py
-├── inference.py
+├── flags.py - make flag object from config
+├── inference.py - do inference
 ├── log
 ├── metrics.py
-├── networks
+├── networks - structure of models
 │   ├── Attention.py
 │   ├── Mish.py
 │   ├── SATRN.py
@@ -122,12 +122,12 @@ code
 │   │   └── SATRN_Effnet.cpython-37.pyc
 │   └── spatial_transformation.py
 ├── requirements.txt
-├── scheduler.py
+├── scheduler.py - set of scheduler function
 ├── submission.txt
 ├── submit
 │   └── output.csv
-├── train.py
-├── utils.py
+├── train.py - do train
+├── utils.py - setting for model, optimizer by config file
 ```
 
 
@@ -137,15 +137,15 @@ code
 ```
 input
 └── data
-    ├── eval_dataset
+    ├── eval_dataset - dataset for evaluation
     │   ├── images
     │   └── input.txt
-    └── train_dataset
-        ├── gt.txt
-        ├── images
-        ├── level.txt
-        ├── source.txt
-        └── tokens.txt
+    └── train_dataset - dataset for train
+        ├── gt.txt - ground truth file
+        ├── images - image files
+        ├── level.txt - level for each images
+        ├── source.txt - handwrite image(value : 1) or printed image(value : 0)
+        └── tokens.txt - all tokens using for description of operations
 ```
 
 
