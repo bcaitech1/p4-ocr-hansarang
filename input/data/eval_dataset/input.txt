@@ -1,0 +1,32 @@
+train_00000.jpg	4 \times 7 = 2 8
+train_00001.jpg	a ^ { x } > q
+train_00002.jpg	8 \times 9
+train_00003.jpg	\sum _ { k = 1 } ^ { n - 1 } b _ { k } = a _ { n } - a _ { 1 }
+train_00004.jpg	I = d q / d t
+train_00005.jpg	\sum \overrightarrow { F } _ { e x t } = d
+train_00006.jpg	i ^ { 2 } = - 1 \left( i = \sqrt { - 1 } \right)
+train_00007.jpg	7 \times 9 = 4 9
+train_00008.jpg	F \left( 0 , \sqrt { a ^ { 2 } + b ^ { 2 } } \right) , \left( 0 , - \sqrt { a ^ { 2 } + b ^ { 2 } } \right)
+train_00009.jpg	\left( a - 2 \right) \left( a - 3 \right) = 0
+train_00010.jpg	\therefore b = - 9
+train_00011.jpg	2 2 + 7 - 1 2 =
+train_00012.jpg	7 \div 4
+train_00013.jpg	f \left( x \right) = 4 x ^ { 3 }
+train_00014.jpg	M P _ { e } = \lim _ { \Delta l \to 0 } \frac { g \left( l + \Delta l \right) - g \left( l \right) } { \Delta l } = \frac { d g } { d l }
+train_00015.jpg	\sum F _ { \theta } = m a _ { \theta }
+train_00016.jpg	= \frac { \left( n + 2 \right) \left( n + 1 \right) } { 2 } = 7 8 = 2 \times 3 9 = 2 \times 3 \times 1 3
+train_00017.jpg	= h \left( a \right)
+train_00018.jpg	1 0 4 \times 9 8 = \left( 1 0 0 + 4 \right) \left( 1 0 0 - 2 \right)
+train_00019.jpg	a _ { n } = a _ { 1 } r ^ { n - 1 }
+train_00020.jpg	x = - 2
+train_00021.jpg	= 3 x \left( x ^ { 2 } + 1 \right)
+train_00022.jpg	1 8 4 - \left( 8 9 + 8 8 \right) = 7
+train_00023.jpg	t = - 1
+train_00024.jpg	\left( 1 2 x - 1 6 \right) \times \left( - \frac { 3 } { 4 } \right) = 1 2 x \times \left( - \frac { 3 } { 4 } \right)
+train_00025.jpg	\frac { 1 6 } { 2 7 } \div \frac { 2 } { 2 7 } =
+train_00026.jpg	x < 4
+train_00027.jpg	= x \left( x - 1 \right) \cdot \left( x - 2 \right) !
+train_00028.jpg	3 6 . 4 8 \div 4 , 5 6
+train_00029.jpg	a = \sqrt { a _ { r } ^ { 2 } + a _ { \theta } ^ { 2 } } = \sqrt { \left( 0 . 3 3 6 \right) ^ { 2 } + \left( 0 . 0 7 \right) ^ { 2 } } = 0 . 3 4 m / s
+train_00030.jpg	P \left( A \right) \cdot P \left( B \right) = \frac { 1 } { 2 } \times \frac { 1 } { 2 } = \frac { 1 } { 4 } \neq \left( A \cap B \right)
+train_00031.jpg	x = \frac { - b ^ \prime \pm \sqrt { b ^ \prime - a c } } { a }
