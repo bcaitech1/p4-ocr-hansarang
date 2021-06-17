@@ -76,7 +76,7 @@ $ python train.py --config_file ./configs/SATRN.yaml
 ### Inference
 
 ```
-$ python train.py --config_file ./log/satrn/checkpoints/0050.pth
+$ python inference.py --config_file ./log/satrn/checkpoints/0050.pth
 ```
 
 
