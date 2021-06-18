@@ -215,7 +215,7 @@ optimizer:
 
 ## Contributors
 
-[박재우(JJayy)](https://github.com/JJayy) | [송광원(remaindere)]() | [신찬엽(chanyub)](https://github.com/chanyub) | [조원(jo-member)](https://github.com/jo-member) | [탁금지(Atica57)](https://github.com/Atica57) | [허재섭(shjas94)](https://github.com/shjas94)
+[박재우(JJayy)](https://github.com/JJayy) | :floppy_disk:[송광원(remaindere)](https://github.com/remaindere) | :sparkles:[신찬엽(chanyub)](https://github.com/chanyub) | [조원(jo-member)](https://github.com/jo-member) | :no_entry_sign:[탁금지(Atica57)](https://github.com/Atica57) | :spades:[허재섭(shjas94)](https://github.com/shjas94)
 
 
 
