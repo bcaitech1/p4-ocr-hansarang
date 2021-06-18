@@ -8,7 +8,7 @@
 
 저희 수식인식기 task는 SATRN model을 기본 틀로 설정하여 수식 이미지 학습을 진행했습니다. Multi line recognition 문제 이외에도 다른 문제를 해결하기 위해 기존 model에 개선 사항을 적용했습니다. 추가적으로 streamlit를 이용해 간단한 웹 데모를 만듦으로써 저희가 만든 모델을 서비스로 출시할 수 있음을 보이고자 했습니다.
 
-<!--[Wiki](https://github.com/bcaitech1/p4-ocr-hansarang/wiki)에 문제 인식, EDA, 모델 설계, 실험 관리 및 검증 전략 등 저희가 고안한 기술의 흐름과 고민의 흔적을 기록했습니다. -->
+:page_with_curl:[Wiki](https://github.com/bcaitech1/p4-ocr-hansarang/wiki)에 문제 인식, EDA, 모델 설계, 실험 관리 및 검증 전략 등 저희가 고안한 기술의 흐름과 고민의 흔적을 기록했습니다.
 
  
 
