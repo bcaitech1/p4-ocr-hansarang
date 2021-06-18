@@ -1,7 +1,6 @@
 # Pstage 4 – 수식인식기 – 한사랑개발회
-<!--![ocr 이미지](https://user-images.githubusercontent.com/43458619/122371055-88aec380-cf9a-11eb-8de3-e141b748e7d2.png)-->
 
-<img src="https://user-images.githubusercontent.com/43458619/122371055-88aec380-cf9a-11eb-8de3-e141b748e7d2.png" width="60%" height="50%">
+<img src="https://user-images.githubusercontent.com/43458619/122523967-8e67e000-d052-11eb-94d2-01cae3d3e3e2.PNG" width="60%" height="50%">
 
 
 수식인식기는 OCR(Optical Character Recognition) task의 일환으로써 수식 이미지 latex 포맷의 텍스트로 변환하는 task입니다. 수식 인식의 경우, 기존의 OCR과 달리 multi line recogniton을 필요로 한다는 점에서 기존의 single line recognition OCR task와 차별점을 가집니다.
