@@ -17,6 +17,38 @@ from tqdm import tqdm
 def main(parser):
     is_cuda = torch.cuda.is_available()
     checkpoint = load_checkpoint(parser.checkpoint, cuda=is_cuda)
+    # ensemble code
+    # model_checkpoints = ["./log/satrn/0001.pth","./log/satrn/0002.pth","./log/satrn/0003.pth"]
+    # checkpoint1 = load_checkpoint(model_checkpoints[0], cuda=is_cuda)
+    # checkpoint2 = load_checkpoint(model_checkpoints[1], cuda=is_cuda)
+    # checkpoint3 = load_checkpoint(model_checkpoints[2], cuda=is_cuda)
+    # model_checkpoint1 = checkpoint1["model"]
+    # model_checkpoint2 = checkpoint2["model"]
+    # model_checkpoint3 = checkpoint3["model"]
+    #     model1 = get_network(
+    #   options.network,
+    #   options,
+    #   model_checkpoint1,
+    #   device,
+    #   test_dataset,
+    #)
+    # model2 = get_network(
+    #   options.network,
+    #   options,
+    #   model_checkpoint2,
+    #   device,
+    #   test_dataset,
+    #)
+    # model3 = get_network(
+    #   options.network,
+    #   options,
+    #   model_checkpoint3,
+    #   device,
+    #   test_dataset,
+    #)
+    # model1.eval()
+    # model2.eval()
+    # model3.eval()
     options = Flags(checkpoint["configs"]).get()
     torch.manual_seed(options.seed)
     random.seed(options.seed)
@@ -81,6 +113,13 @@ def main(parser):
         expected = d["truth"]["encoded"].to(device)
 
         output = model(input, expected, False, 0.0)
+        # output1 = model1(input, expected, False, 0.0)
+        # output2 = model2(input, expected, False, 0.0)
+        # output3 = model3(input, expected, False, 0.0)
+        # decoded_values1 = output1.transpose(1, 2)
+        # decoded_values2 = output2.transpose(1, 2)
+        # decoded_values3 = output3.transpose(1, 2)
+        # decoded_values = 0.3*decoded_values1+0.4*decoded_values2+0.3*decoded_values3
         decoded_values = output.transpose(1, 2)
         _, sequence = torch.topk(decoded_values, 1, dim=1)
         sequence = sequence.squeeze(1)
