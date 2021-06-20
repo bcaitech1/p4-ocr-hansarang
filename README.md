@@ -30,7 +30,7 @@
 
 ## Demo
 
-[[Click here!]Demo link](http://35.74.99.158:8501/)
+[[Click here!]Demo link](http://remaindere.asuscomm.com:8501/)
 
 아래의 링크에서 Demo의 자세한 사항을 확인하실 수 있습니다.
 
@@ -173,12 +173,6 @@ SATRN:
     filter_dim: 512
     layer_num: 3
     head_num: 8
-Attention:
-  src_dim: 512
-  hidden_dim: 128
-  embedding_dim: 128
-  layer_num: 1
-  cell_type: "LSTM"
 checkpoint: ""
 prefix: "./log/satrn"
 
