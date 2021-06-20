@@ -1,8 +1,8 @@
 # 한사랑 개발회 수식 OCR 모델 프로토타입
 
 ## ScreenShot
-
-
+![image](https://user-images.githubusercontent.com/48322490/122684772-7f478480-d242-11eb-95b2-7cd268258c29.png)  
+  
 ## Requirement
 상위 requirement + Streamlit
 
